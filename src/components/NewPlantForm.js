@@ -9,7 +9,7 @@ function NewPlantForm({setPlants}) {
     e.preventDefault();
     //const newPlant = {name,image, price: price.toString()};
 
-    fetch(`http://localhost:6001/plants`,{
+    fetch(`https://react-hooks-cc-plantshop-b14k.onrender.com/plants`,{
       method: "POST",
       headers:{ 
         "Content-Type": "Application/JSON",

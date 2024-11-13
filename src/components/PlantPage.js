@@ -8,7 +8,7 @@ function PlantPage() {
   const[searchTerm, setSearchTerm] = useState("")
 
   useEffect(() => {
-    fetch("http://localhost:6001/plants")
+    fetch("https://react-hooks-cc-plantshop-b14k.onrender.com/plants")
       .then((res) => res.json())
       .then((data) => setPlants(data))
       .catch((error) => console.error("Error fetching plants:", error));
@@ -16,7 +16,7 @@ function PlantPage() {
   const filteredPlants = plants.filter((plant) => plant.name && plant.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
   const updatePrice =(id,newPrice)=>{
-    fetch(`http://localhost:6001/plants/${id}`,{
+    fetch(`https://react-hooks-cc-plantshop-b14k.onrender.com/plants/${id}`,{
       method:"PATCH",
       headers:{"Content-Type": "Application/JSON",},
       body:JSON.stringify({price:newPrice}),
@@ -33,7 +33,7 @@ function PlantPage() {
   };
 
   const deletePlant = (id) =>{
-    fetch(`http://localhost:6001/plants/${id}`,{
+    fetch(`https://react-hooks-cc-plantshop-b14k.onrender.com/plants/${id}`,{
       method:"DElETE",
     })
       .then(()=>{
